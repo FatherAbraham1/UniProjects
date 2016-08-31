@@ -1,0 +1,30 @@
+General - Satz ist zu kurz	19
+General - Anteilig zu viele Leerzeichen	0
+General - Viele Ziffern hintereinander	41
+General - Sätze, die Leerzeichen vor Satzzeichen (außer ,wort) besitzen	41
+General - Preprocessing-Müll	0
+General - G e s p e r r t e r Text	38
+General - Weiche Silbentrennung	0
+General - Sätze mit auffälligen Sonderzeichen	96
+General - Tabulator im Satz	73
+General - Geodaten	0
+General - Sätze, die Initialien bzw. getrennte Abkürzungen am Satzende besitzen	19
+General - Sätze, die mehrere Zeichen '/', ')', '&', ':' besitzen.	19
+General - Sätze, die . . . am Satzende besitzen und maximal 60 Zeichen lang sind	0
+General - Satz enthält '...'	0
+General - Zeichen die durch Kodierungsfehler im Satz enthalten sind	16
+General - Unerwünschte Zeichenkombis	0
+General - Sätze, die mindestens 8 großgeschriebene Wörter hintereinander besitzen	19
+General - Kurze Sätze, die viele Ziffern vor .,/ besitzen	0
+General - Zu viele Leerzeichen	0
+General - Internet-Text	16
+General - Satzanfang: weitere besondere Zeichen	16
+General - Zu viele Kommata (mind. 10)	38
+General - Kein Satzendezeichen	131
+General - Sätze, die mehrere aufeinanderfolgende '!', '?' besitzen	19
+General - Sonderzeichen am Satzanfang	48
+General - Satzanfang: Kleinbuchstaben, math.Zeichen, ...	48
+General - Satz ist zu lang	19
+General - Zu viele Punkte (mind. 8)	19
+General - Zwei aufeinanderfolgende Leerzeichen	19
+General - Viele Großbuchstaben/Zeichen gleicher Art hintereinander	19
