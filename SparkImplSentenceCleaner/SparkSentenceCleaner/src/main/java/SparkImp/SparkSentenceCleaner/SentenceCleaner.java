@@ -17,7 +17,7 @@ import gnu.getopt.Getopt;
 
 public class SentenceCleaner {
 	// create a java spark context
-	static SparkConf conf = new SparkConf().setAppName("SentenceCleaner").setMaster("local");
+	static SparkConf conf = new SparkConf().setAppName("SparkSentenceCleaner").setMaster("local");
 	static JavaSparkContext sc = new JavaSparkContext(conf);
 
 	private static HashMap<Integer, SentenceFilter> filterMap = null;
@@ -199,13 +199,13 @@ public class SentenceCleaner {
 				isValid = false;
 				if (exchangeOutput) // write ill-formed sentences
 					output[outputIndex++] = (line + "\tRule: " + filter.getFilterID() + " "
-							+ filter.getFilterDescription() + "\n");
+							+ filter.getFilterDescription());
 				break;
 			}
 		}
 		// write well-formed sentences
 		if (isValid && !exchangeOutput)
-			output[outputIndex++] = (line + "\n");
+			output[outputIndex++] = (line);
 		return (Arrays.asList(output));
 	}
 
@@ -231,10 +231,11 @@ public class SentenceCleaner {
 		}
 		String[] args = new String[5];
 		args[0] = "-i";
-		args[1] = "/Users/soheila/Documents/workspace/input/inputRaw";// BigData";
-		// "/Users/soheila/workspace/SparkSentenceCleaner/inputfile_raw";
+		// args[1] = "/Users/soheila/Documents/workspace/input/inputRaw";
+		args[1] = "/Users/soheila/Documents/workspace/input/inputRawBigData";
 		args[2] = "-o";
-		args[3] = "/Users/soheila/Documents/workspace/output/Lines"; // BigData";
+		// args[3] = "/Users/soheila/Documents/workspace/output/Lines";
+		args[3] = "/Users/soheila/Documents/workspace/output/LinesBigData";
 		args[4] = "-s";
 		init(args);
 
