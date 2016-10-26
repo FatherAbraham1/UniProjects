@@ -1,0 +1,26 @@
+<quelle><name>http://index.html</name><name_lang>http://index.html</name_lang></quelle>
+unknown	<datum>2011-09-23</datum>
+unknown	<sachgebiet></sachgebiet>
+<quelle><name>http://www.domin.co.kr/Autobox/250_AutoBox1.html</name><name_lang>http://www.domin.co.kr/Autobox/250_AutoBox1.html</name_lang></quelle>
+unknown	<datum>2011-09-23</datum>
+<quelle><name>http://www.domin.co.kr/Autobox/HotNews.html</name><name_lang>http://www.domin.co.kr/Autobox/HotNews.html</name_lang></quelle>
+unknown	<datum>2011-09-23</datum>
+<quelle><name>http://www.domin.co.kr/Autobox/230_TabBox4.html</name><name_lang>http://www.domin.co.kr/Autobox/230_TabBox4.html</name_lang></quelle>
+unknown	<datum>2011-09-23</datum>
+unknown	‘폐지를 모아오시면 재활용 노트를 드립니다.
+<quelle><name>http://www.domin.co.kr/Autobox/230_TabBox.html</name><name_lang>http://www.domin.co.kr/Autobox/230_TabBox.html</name_lang></quelle>
+unknown	<datum>2011-09-23</datum>
+unknown	<datum>2011-09-23</datum>
+<quelle><name>http://index.html</name><name_lang>http://index.html</name_lang></quelle>
+<datum>2011-09-23</datum>
+<sachgebiet></sachgebiet>
+<quelle><name>http://www.domin.co.kr/Autobox/250_AutoBox1.html</name><name_lang>http://www.domin.co.kr/Autobox/250_AutoBox1.html</name_lang></quelle>
+<datum>2011-09-23</datum>
+<quelle><name>http://www.domin.co.kr/Autobox/HotNews.html</name><name_lang>http://www.domin.co.kr/Autobox/HotNews.html</name_lang></quelle>
+<datum>2011-09-23</datum>
+<quelle><name>http://www.domin.co.kr/Autobox/230_TabBox4.html</name><name_lang>http://www.domin.co.kr/Autobox/230_TabBox4.html</name_lang></quelle>
+<datum>2011-09-23</datum>
+‘폐지를 모아오시면 재활용 노트를 드립니다.
+<quelle><name>http://www.domin.co.kr/Autobox/230_TabBox.html</name><name_lang>http://www.domin.co.kr/Autobox/230_TabBox.html</name_lang></quelle>
+<datum>2011-09-23</datum>
+<datum>2011-09-23</datum>

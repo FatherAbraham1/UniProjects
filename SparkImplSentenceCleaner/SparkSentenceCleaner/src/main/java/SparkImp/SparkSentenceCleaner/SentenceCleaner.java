@@ -12,13 +12,14 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function;
+import org.apache.spark.storage.StorageLevel;
 
 import gnu.getopt.Getopt;
 
 public class SentenceCleaner {
 	// create a java spark context
-	static SparkConf conf = new SparkConf().setAppName("SparkSentenceCleaner").setMaster("local");
-	static JavaSparkContext sc = new JavaSparkContext(conf);
+	static SparkConf conf = new SparkConf().setAppName("SparkSentenceCleaner");
+	static JavaSparkContext sparkContext = new JavaSparkContext(conf);
 
 	private static HashMap<Integer, SentenceFilter> filterMap = null;
 
@@ -223,22 +224,13 @@ public class SentenceCleaner {
 		CleanerLogging.saveStatFile();
 	}
 
-	public static void main(String[] args1) {
-		// parameters
-		if (args1.length == 0) {
+	public static void main(String[] args) {
+		// // parameters
+		if (args.length == 0) {
 			printHelp();
-			// System.exit(1);
+			System.exit(1);
 		}
-		String[] args = new String[5];
-		args[0] = "-i";
-		// args[1] = "/Users/soheila/Documents/workspace/input/inputRaw";
-		args[1] = "/Users/soheila/Documents/workspace/input/inputRawBigData";
-		args[2] = "-o";
-		// args[3] = "/Users/soheila/Documents/workspace/output/Lines";
-		args[3] = "/Users/soheila/Documents/workspace/output/LinesBigData";
-		args[4] = "-s";
 		init(args);
-
 		String inputFile = args[1];
 		String outputDir = args[3];
 		if (new File(outputDir).exists()) {
@@ -248,21 +240,22 @@ public class SentenceCleaner {
 				e.printStackTrace();
 			}
 		}
+		// spark.memory.useLegacyMode
 		conf.set("spark.hadoop.validateOutputSpecs", "false");// rewrite output
-																// file
+		// conf.se
 		// load input data
-		JavaRDD<String> textFile = sc.textFile(inputFile);
+		JavaRDD<String> textFile = sparkContext.textFile(inputFile);
 		// split up into words
 		JavaRDD<String> lines = textFile.flatMap(new FlatMapFunction<String, String>() {
 			public Iterable<String> call(String s) {
 				return Arrays.asList(s.split("\\r?\\n"));
 			}
 		});
-		lines.cache();
+		lines.persist(StorageLevel.MEMORY_ONLY_SER());
 		// load general rules
 		File generalRulesFil = new File("rules", "general.rules");
 		filterMap = loadRuleFiles(generalRulesFil, new File(inputFile));
-		JavaRDD<String> temporaryCleanedLines = lines.flatMap(new FlatMapFunction<String, String>() {
+		JavaRDD<String> cleanedLines = lines.flatMap(new FlatMapFunction<String, String>() {
 			public Iterable<String> call(String line) {
 				switch (inputType) {
 				case "raw-text":
@@ -282,15 +275,13 @@ public class SentenceCleaner {
 				}
 				return null;
 			}
-		});
-		temporaryCleanedLines.cache();
-		JavaRDD<String> cleanedLines = temporaryCleanedLines.filter(new Function<String, Boolean>() {
+		}).filter(new Function<String, Boolean>() {
 			public Boolean call(String line) {
 				return (line.length() > 0);
 			}
 		});
 		cleanedLines.saveAsTextFile(outputDir);
-		writeStatistics(showSummary);
+		// writeStatistics(showSummary);
 	}
 
 }

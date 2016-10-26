@@ -1,0 +1,8 @@
+<quelle><name>http://www.domin.co.kr/Autobox/230_TabBox.html</name><name_lang>http://www.domin.co.kr/Autobox/230_TabBox.html</name_lang></quelle>
+eng	99	hun	0	This is an english test.
+<source><location>ds</location><date>2012-09-21</date></source>
+eng	99	hun	0	This is another test.
+<quelle><name>http://www.domin.co.kr/Autobox/230_TabBox.html</name><name_lang>http://www.domin.co.kr/Autobox/230_TabBox.html</name_lang></quelle>
+This is an english test.
+<source><location>ds</location><date>2012-09-21</date></source>
+This is another test.
